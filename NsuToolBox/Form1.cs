@@ -21,10 +21,7 @@ namespace NsuToolBox
 
             #endregion
 
-
         }
-
-
 
         #region 检测与学院内网是否相通
         /// <summary>
@@ -49,7 +46,6 @@ namespace NsuToolBox
         }
 
         #endregion
-
 
         #region 窗体靠边隐藏
         /// <summary>
@@ -140,8 +136,6 @@ namespace NsuToolBox
             this.mStopAnhor();
         }
         #endregion
-
-
 
         #region 托盘图标和右键菜单
         private void Form1_SizeChanged(object sender, EventArgs e)
@@ -265,9 +259,16 @@ namespace NsuToolBox
             p.StandardInput.WriteLine("ipconfig /renew");
         }
 
+        private void gradeButton_Click(object sender, EventArgs e)
+        {
+            Process.Start("http://cj.dean.nsu.edu.cn");
+        }
+
+        private void payButton_Click(object sender, EventArgs e)
+        {
+            Process.Start("http://pay.dean.nsu.edu.cn");
+        }
+
         #endregion
     }
-
-
-
 }

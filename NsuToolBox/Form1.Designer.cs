@@ -37,6 +37,8 @@
             this.itbmFtpButton = new System.Windows.Forms.Button();
             this.csFtpButton = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.payButton = new System.Windows.Forms.Button();
+            this.gradeButton = new System.Windows.Forms.Button();
             this.kbButton = new System.Windows.Forms.Button();
             this.xlButton = new System.Windows.Forms.Button();
             this.dreamsparkButton = new System.Windows.Forms.Button();
@@ -56,8 +58,8 @@
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripMenuItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.CERTButton = new System.Windows.Forms.Button();
             this.getIPButton = new System.Windows.Forms.Button();
+            this.CERTButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -132,6 +134,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.payButton);
+            this.groupBox2.Controls.Add(this.gradeButton);
             this.groupBox2.Controls.Add(this.kbButton);
             this.groupBox2.Controls.Add(this.xlButton);
             this.groupBox2.Controls.Add(this.dreamsparkButton);
@@ -145,14 +149,34 @@
             this.groupBox2.Font = new System.Drawing.Font("微软雅黑", 9F);
             this.groupBox2.Location = new System.Drawing.Point(139, 13);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(204, 183);
+            this.groupBox2.Size = new System.Drawing.Size(372, 183);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "校内网站";
             // 
+            // payButton
+            // 
+            this.payButton.Location = new System.Drawing.Point(219, 52);
+            this.payButton.Name = "payButton";
+            this.payButton.Size = new System.Drawing.Size(75, 23);
+            this.payButton.TabIndex = 11;
+            this.payButton.Text = "缴费系统";
+            this.payButton.UseVisualStyleBackColor = true;
+            this.payButton.Click += new System.EventHandler(this.payButton_Click);
+            // 
+            // gradeButton
+            // 
+            this.gradeButton.Location = new System.Drawing.Point(219, 23);
+            this.gradeButton.Name = "gradeButton";
+            this.gradeButton.Size = new System.Drawing.Size(75, 23);
+            this.gradeButton.TabIndex = 10;
+            this.gradeButton.Text = "成绩查询";
+            this.gradeButton.UseVisualStyleBackColor = true;
+            this.gradeButton.Click += new System.EventHandler(this.gradeButton_Click);
+            // 
             // kbButton
             // 
-            this.kbButton.Location = new System.Drawing.Point(118, 139);
+            this.kbButton.Location = new System.Drawing.Point(116, 139);
             this.kbButton.Name = "kbButton";
             this.kbButton.Size = new System.Drawing.Size(75, 23);
             this.kbButton.TabIndex = 9;
@@ -162,7 +186,7 @@
             // 
             // xlButton
             // 
-            this.xlButton.Location = new System.Drawing.Point(118, 110);
+            this.xlButton.Location = new System.Drawing.Point(116, 110);
             this.xlButton.Name = "xlButton";
             this.xlButton.Size = new System.Drawing.Size(75, 23);
             this.xlButton.TabIndex = 8;
@@ -172,7 +196,7 @@
             // 
             // dreamsparkButton
             // 
-            this.dreamsparkButton.Location = new System.Drawing.Point(118, 81);
+            this.dreamsparkButton.Location = new System.Drawing.Point(116, 81);
             this.dreamsparkButton.Name = "dreamsparkButton";
             this.dreamsparkButton.Size = new System.Drawing.Size(75, 23);
             this.dreamsparkButton.TabIndex = 7;
@@ -182,7 +206,7 @@
             // 
             // bxButton
             // 
-            this.bxButton.Location = new System.Drawing.Point(118, 52);
+            this.bxButton.Location = new System.Drawing.Point(116, 52);
             this.bxButton.Name = "bxButton";
             this.bxButton.Size = new System.Drawing.Size(75, 23);
             this.bxButton.TabIndex = 6;
@@ -192,7 +216,7 @@
             // 
             // regButton
             // 
-            this.regButton.Location = new System.Drawing.Point(118, 23);
+            this.regButton.Location = new System.Drawing.Point(116, 23);
             this.regButton.Name = "regButton";
             this.regButton.Size = new System.Drawing.Size(75, 23);
             this.regButton.TabIndex = 5;
@@ -256,9 +280,9 @@
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.groupBox3.Location = new System.Drawing.Point(349, 14);
+            this.groupBox3.Location = new System.Drawing.Point(349, 202);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(162, 182);
+            this.groupBox3.Size = new System.Drawing.Size(162, 119);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "关于";
@@ -267,7 +291,7 @@
             // 
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("微软雅黑", 8F);
-            this.linkLabel1.Location = new System.Drawing.Point(9, 142);
+            this.linkLabel1.Location = new System.Drawing.Point(6, 100);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(150, 16);
             this.linkLabel1.TabIndex = 2;
@@ -277,16 +301,16 @@
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(6, 51);
+            this.label2.Location = new System.Drawing.Point(6, 48);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(147, 81);
+            this.label2.Size = new System.Drawing.Size(147, 26);
             this.label2.TabIndex = 1;
-            this.label2.Text = "作者:yGin                     本程序支持靠边隐藏，无任务栏图标，有托盘图标 网络修复只添加CC不自带的部分";
+            this.label2.Text = "作者:yGin";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 23);
+            this.label1.Location = new System.Drawing.Point(6, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(85, 17);
             this.label1.TabIndex = 0;
@@ -325,20 +349,10 @@
             this.groupBox4.Font = new System.Drawing.Font("微软雅黑", 9F);
             this.groupBox4.Location = new System.Drawing.Point(13, 202);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(498, 119);
+            this.groupBox4.Size = new System.Drawing.Size(330, 119);
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "网络修复";
-            // 
-            // CERTButton
-            // 
-            this.CERTButton.Location = new System.Drawing.Point(20, 22);
-            this.CERTButton.Name = "CERTButton";
-            this.CERTButton.Size = new System.Drawing.Size(75, 23);
-            this.CERTButton.TabIndex = 10;
-            this.CERTButton.Text = "下载证书";
-            this.CERTButton.UseVisualStyleBackColor = true;
-            this.CERTButton.Click += new System.EventHandler(this.button1_Click);
             // 
             // getIPButton
             // 
@@ -349,6 +363,16 @@
             this.getIPButton.Text = "重新获取IP";
             this.getIPButton.UseVisualStyleBackColor = true;
             this.getIPButton.Click += new System.EventHandler(this.getIPButton_Click);
+            // 
+            // CERTButton
+            // 
+            this.CERTButton.Location = new System.Drawing.Point(20, 22);
+            this.CERTButton.Name = "CERTButton";
+            this.CERTButton.Size = new System.Drawing.Size(75, 23);
+            this.CERTButton.TabIndex = 10;
+            this.CERTButton.Text = "下载证书";
+            this.CERTButton.UseVisualStyleBackColor = true;
+            this.CERTButton.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
@@ -408,6 +432,8 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button CERTButton;
         private System.Windows.Forms.Button getIPButton;
+        private System.Windows.Forms.Button gradeButton;
+        private System.Windows.Forms.Button payButton;
     }
 }
 
