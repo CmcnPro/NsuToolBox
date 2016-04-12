@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-
 using System.Net.NetworkInformation;
 using System.Diagnostics;
 
@@ -213,7 +212,7 @@ namespace NsuToolBox
 
         private void regButton_Click(object sender, EventArgs e)
         {
-            Process.Start("http://reg.nsu.edu.cn/");
+            Process.Start("http://r.nsu.edu.cn/");
         }
 
         private void bxButton_Click(object sender, EventArgs e)
@@ -266,7 +265,7 @@ namespace NsuToolBox
 
         private void payButton_Click(object sender, EventArgs e)
         {
-            Process.Start("http://pay.dean.nsu.edu.cn");
+            Process.Start("http://pay.nsu.edu.cn");
         }
 
         #endregion
