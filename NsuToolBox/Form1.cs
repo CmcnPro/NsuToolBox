@@ -268,6 +268,18 @@ namespace NsuToolBox
             Process.Start("http://pay.nsu.edu.cn");
         }
 
+        private void androidAAAButton_Click(object sender, EventArgs e)
+        {
+            Process.Start("http://aaa.nsu.edu.cn/download/NSUAAAC_alpha1_141124_sign.apk");
+        }
+
+        private void APSettingButton_Click(object sender, EventArgs e)
+        {
+            APSettingsButtun ap = new APSettingsButtun();
+            ap.Show();
+        }
+
         #endregion
+
     }
 }

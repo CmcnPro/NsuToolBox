@@ -60,6 +60,8 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.getIPButton = new System.Windows.Forms.Button();
             this.CERTButton = new System.Windows.Forms.Button();
+            this.androidAAAButton = new System.Windows.Forms.Button();
+            this.APSettingButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -312,9 +314,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(6, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 17);
+            this.label1.Size = new System.Drawing.Size(95, 17);
             this.label1.TabIndex = 0;
-            this.label1.Text = "当前版本：1.1";
+            this.label1.Text = "当前版本：1.1.1";
             // 
             // notifyIcon1
             // 
@@ -344,6 +346,8 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.APSettingButton);
+            this.groupBox4.Controls.Add(this.androidAAAButton);
             this.groupBox4.Controls.Add(this.getIPButton);
             this.groupBox4.Controls.Add(this.CERTButton);
             this.groupBox4.Font = new System.Drawing.Font("微软雅黑", 9F);
@@ -352,7 +356,7 @@
             this.groupBox4.Size = new System.Drawing.Size(330, 119);
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "网络修复";
+            this.groupBox4.Text = "网络相关";
             // 
             // getIPButton
             // 
@@ -373,6 +377,26 @@
             this.CERTButton.Text = "下载证书";
             this.CERTButton.UseVisualStyleBackColor = true;
             this.CERTButton.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // androidAAAButton
+            // 
+            this.androidAAAButton.Location = new System.Drawing.Point(20, 80);
+            this.androidAAAButton.Name = "androidAAAButton";
+            this.androidAAAButton.Size = new System.Drawing.Size(75, 23);
+            this.androidAAAButton.TabIndex = 12;
+            this.androidAAAButton.Text = "安卓AAA";
+            this.androidAAAButton.UseVisualStyleBackColor = true;
+            this.androidAAAButton.Click += new System.EventHandler(this.androidAAAButton_Click);
+            // 
+            // APSettingButton
+            // 
+            this.APSettingButton.Location = new System.Drawing.Point(126, 22);
+            this.APSettingButton.Name = "APSettingButton";
+            this.APSettingButton.Size = new System.Drawing.Size(75, 23);
+            this.APSettingButton.TabIndex = 13;
+            this.APSettingButton.Text = "路由设置";
+            this.APSettingButton.UseVisualStyleBackColor = true;
+            this.APSettingButton.Click += new System.EventHandler(this.APSettingButton_Click);
             // 
             // Form1
             // 
@@ -434,6 +458,8 @@
         private System.Windows.Forms.Button getIPButton;
         private System.Windows.Forms.Button gradeButton;
         private System.Windows.Forms.Button payButton;
+        private System.Windows.Forms.Button androidAAAButton;
+        private System.Windows.Forms.Button APSettingButton;
     }
 }
 
