@@ -56,12 +56,11 @@
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.APSettingButton = new System.Windows.Forms.Button();
+            this.androidAAAButton = new System.Windows.Forms.Button();
             this.getIPButton = new System.Windows.Forms.Button();
             this.CERTButton = new System.Windows.Forms.Button();
-            this.androidAAAButton = new System.Windows.Forms.Button();
-            this.APSettingButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -316,10 +315,13 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(95, 17);
             this.label1.TabIndex = 0;
-            this.label1.Text = "当前版本：1.1.1";
+            this.label1.Text = "当前版本：1.2.0";
             // 
             // notifyIcon1
             // 
+            this.notifyIcon1.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.notifyIcon1.BalloonTipText = "成都东软学院校内资源快捷工具";
+            this.notifyIcon1.BalloonTipTitle = "亲，我在系统托盘里，表忘我~o(≧v≦)o~~";
             this.notifyIcon1.ContextMenuStrip = this.contextMenuStrip1;
             this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
             this.notifyIcon1.Text = "成都东软学院校内资源快捷工具";
@@ -340,10 +342,6 @@
             this.toolStripTextBox1.Text = "退出";
             this.toolStripTextBox1.Click += new System.EventHandler(this.toolStripTextBox1_Click);
             // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.APSettingButton);
@@ -357,6 +355,26 @@
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "网络相关";
+            // 
+            // APSettingButton
+            // 
+            this.APSettingButton.Location = new System.Drawing.Point(126, 22);
+            this.APSettingButton.Name = "APSettingButton";
+            this.APSettingButton.Size = new System.Drawing.Size(75, 23);
+            this.APSettingButton.TabIndex = 13;
+            this.APSettingButton.Text = "路由设置";
+            this.APSettingButton.UseVisualStyleBackColor = true;
+            this.APSettingButton.Click += new System.EventHandler(this.APSettingButton_Click);
+            // 
+            // androidAAAButton
+            // 
+            this.androidAAAButton.Location = new System.Drawing.Point(20, 80);
+            this.androidAAAButton.Name = "androidAAAButton";
+            this.androidAAAButton.Size = new System.Drawing.Size(75, 23);
+            this.androidAAAButton.TabIndex = 12;
+            this.androidAAAButton.Text = "安卓AAA";
+            this.androidAAAButton.UseVisualStyleBackColor = true;
+            this.androidAAAButton.Click += new System.EventHandler(this.androidAAAButton_Click);
             // 
             // getIPButton
             // 
@@ -378,26 +396,6 @@
             this.CERTButton.UseVisualStyleBackColor = true;
             this.CERTButton.Click += new System.EventHandler(this.button1_Click);
             // 
-            // androidAAAButton
-            // 
-            this.androidAAAButton.Location = new System.Drawing.Point(20, 80);
-            this.androidAAAButton.Name = "androidAAAButton";
-            this.androidAAAButton.Size = new System.Drawing.Size(75, 23);
-            this.androidAAAButton.TabIndex = 12;
-            this.androidAAAButton.Text = "安卓AAA";
-            this.androidAAAButton.UseVisualStyleBackColor = true;
-            this.androidAAAButton.Click += new System.EventHandler(this.androidAAAButton_Click);
-            // 
-            // APSettingButton
-            // 
-            this.APSettingButton.Location = new System.Drawing.Point(126, 22);
-            this.APSettingButton.Name = "APSettingButton";
-            this.APSettingButton.Size = new System.Drawing.Size(75, 23);
-            this.APSettingButton.TabIndex = 13;
-            this.APSettingButton.Text = "路由设置";
-            this.APSettingButton.UseVisualStyleBackColor = true;
-            this.APSettingButton.Click += new System.EventHandler(this.APSettingButton_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -410,11 +408,9 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(539, 372);
-            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(539, 372);
             this.Name = "Form1";
             this.Text = "成都东软学院校内资源快捷工具";
-            this.LocationChanged += new System.EventHandler(this.Form1_LocationChanged);
             this.SizeChanged += new System.EventHandler(this.Form1_SizeChanged);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
@@ -450,7 +446,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem toolStripTextBox1;
         private System.Windows.Forms.GroupBox groupBox4;
