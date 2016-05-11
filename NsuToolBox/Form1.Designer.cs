@@ -37,7 +37,7 @@
             this.itbmFtpButton = new System.Windows.Forms.Button();
             this.csFtpButton = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.payButton = new System.Windows.Forms.Button();
+            this.mirrorsButton = new System.Windows.Forms.Button();
             this.gradeButton = new System.Windows.Forms.Button();
             this.kbButton = new System.Windows.Forms.Button();
             this.xlButton = new System.Windows.Forms.Button();
@@ -57,6 +57,7 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.iOSAAAButton = new System.Windows.Forms.Button();
             this.APSettingButton = new System.Windows.Forms.Button();
             this.androidAAAButton = new System.Windows.Forms.Button();
             this.getIPButton = new System.Windows.Forms.Button();
@@ -135,7 +136,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.payButton);
+            this.groupBox2.Controls.Add(this.mirrorsButton);
             this.groupBox2.Controls.Add(this.gradeButton);
             this.groupBox2.Controls.Add(this.kbButton);
             this.groupBox2.Controls.Add(this.xlButton);
@@ -155,15 +156,15 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "校内网站";
             // 
-            // payButton
+            // mirrorsButton
             // 
-            this.payButton.Location = new System.Drawing.Point(219, 52);
-            this.payButton.Name = "payButton";
-            this.payButton.Size = new System.Drawing.Size(75, 23);
-            this.payButton.TabIndex = 11;
-            this.payButton.Text = "缴费系统";
-            this.payButton.UseVisualStyleBackColor = true;
-            this.payButton.Click += new System.EventHandler(this.payButton_Click);
+            this.mirrorsButton.Location = new System.Drawing.Point(219, 52);
+            this.mirrorsButton.Name = "mirrorsButton";
+            this.mirrorsButton.Size = new System.Drawing.Size(75, 23);
+            this.mirrorsButton.TabIndex = 12;
+            this.mirrorsButton.Text = "内网镜像";
+            this.mirrorsButton.UseVisualStyleBackColor = true;
+            this.mirrorsButton.Click += new System.EventHandler(this.mirrorsButton_Click);
             // 
             // gradeButton
             // 
@@ -315,7 +316,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(95, 17);
             this.label1.TabIndex = 0;
-            this.label1.Text = "当前版本：1.2.0";
+            this.label1.Text = "当前版本：1.2.1";
             // 
             // notifyIcon1
             // 
@@ -344,6 +345,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.iOSAAAButton);
             this.groupBox4.Controls.Add(this.APSettingButton);
             this.groupBox4.Controls.Add(this.androidAAAButton);
             this.groupBox4.Controls.Add(this.getIPButton);
@@ -355,6 +357,16 @@
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "网络相关";
+            // 
+            // iOSAAAButton
+            // 
+            this.iOSAAAButton.Location = new System.Drawing.Point(126, 51);
+            this.iOSAAAButton.Name = "iOSAAAButton";
+            this.iOSAAAButton.Size = new System.Drawing.Size(75, 23);
+            this.iOSAAAButton.TabIndex = 14;
+            this.iOSAAAButton.Text = "iOSAAA";
+            this.iOSAAAButton.UseVisualStyleBackColor = true;
+            this.iOSAAAButton.Click += new System.EventHandler(this.iOSAAAButton_Click);
             // 
             // APSettingButton
             // 
@@ -452,9 +464,10 @@
         private System.Windows.Forms.Button CERTButton;
         private System.Windows.Forms.Button getIPButton;
         private System.Windows.Forms.Button gradeButton;
-        private System.Windows.Forms.Button payButton;
         private System.Windows.Forms.Button androidAAAButton;
         private System.Windows.Forms.Button APSettingButton;
+        private System.Windows.Forms.Button mirrorsButton;
+        private System.Windows.Forms.Button iOSAAAButton;
     }
 }
 

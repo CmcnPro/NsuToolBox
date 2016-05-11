@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.Net.NetworkInformation;
 using System.Diagnostics;
+using System.Threading;
 
 namespace NsuToolBox
 {
@@ -11,33 +12,65 @@ namespace NsuToolBox
         public Form1()
         {
             InitializeComponent();
-
             #region 初始化
 
-            this.CheckNet();//检测网络
+            this.CheckNet("100.0.0.10");//检测网络
+
+            Thread th = new Thread(ThreadChild);
+            th.Start();
 
             #endregion
 
+        }
+
+        static  void ThreadChild()
+        {
+            var p = new Ping();
+            PingReply reply = p.Send("github.com");
+            if (reply.Status == IPStatus.Success)
+            {
+                string version = "1.2.1";
+                Update up = new Update();
+                up.getJson();
+                up.getLastVersion();
+                if (up.checkUpadte(version))
+                    MessageBox.Show("成都东软校园资源快捷工具有新的更新");
+            }
+            else MessageBox.Show("检测到您当前无法正常访问Github,无法更新本程序");
         }
 
         #region 检测与学院内网是否相通
         /// <summary>
         /// 检测与学院内网是否相通
         /// </summary>
-        private void CheckNet()
+        private void CheckNet(string IP)
         {
             try
             {
                 var p = new Ping();
-                PingReply reply = p.Send("100.0.0.10");
+                PingReply reply = p.Send(IP);
                 if (reply.Status != IPStatus.Success)
                 {
-                    MessageBox.Show("检测到您当前可能未在校内，部分链接可能会无法使用");
+                    if (string.Equals(IP, "100.0.0.10"))
+                    {
+                        MessageBox.Show("检测到您当前可能未在校内，部分链接可能会无法使用");
+                    }
+                    if (string.Equals(IP,"github.com"))
+                    {
+                        MessageBox.Show("检测到您当前无法访问GIthub,无法更新本程序");
+                    }
                 }
             }
             catch (Exception)
             {
-                MessageBox.Show("检测到您当前可能未在校内，部分链接可能会无法使用");
+                if (string.Equals(IP, "100.0.0.10"))
+                {
+                    MessageBox.Show("检测到您当前可能未在校内，部分链接可能会无法使用");
+                }
+                if (string.Equals(IP, "github.com"))
+                {
+                    MessageBox.Show("检测到您当前无法访问GIthub,无法更新本程序");
+                }
             }
 
         }
@@ -149,8 +182,11 @@ namespace NsuToolBox
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start("http://www.cmcnpro.cn/?p=208");
+            Process.Start("https://github.com/CmcnPro/NsuToolBox/releases");
+
         }
+
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -175,14 +211,14 @@ namespace NsuToolBox
             Process.Start("http://cj.dean.nsu.edu.cn");
         }
 
-        private void payButton_Click(object sender, EventArgs e)
-        {
-            Process.Start("http://pay.nsu.edu.cn");
-        }
-
         private void androidAAAButton_Click(object sender, EventArgs e)
         {
             Process.Start("http://aaa.nsu.edu.cn/download/NSUAAAC_alpha1_141124_sign.apk");
+        }
+
+        private void iOSAAAButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("请使用iSO设备打开 https://setup.nsu.edu.cn/aaa/ios/ 需进入校园网络");
         }
 
         private void APSettingButton_Click(object sender, EventArgs e)
@@ -190,6 +226,13 @@ namespace NsuToolBox
             APSettingsButtun ap = new APSettingsButtun();
             ap.Show();
         }
+
+        private void mirrorsButton_Click(object sender, EventArgs e)
+        {
+            Process.Start("http://mirrors.nsu.edu.cn/");
+        }
+
+
 
         #endregion
 
