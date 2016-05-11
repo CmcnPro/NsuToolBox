@@ -1,10 +1,12 @@
 # NsuToolBox
 A toolbox for Chengdu Neusoft University 
-</br>一款成都东软学院校内资源快捷工具
+</br>成都东软学院校内资源快捷工具
 
 ## Requirements
-You'll need .NET Framework 4.0 or later to use the precompiled binaries. To build client, you'll need Visual Studio 2012 or later versions.
-</br>你需要使用.NET Framework 4.0 或者更高的版本。请使用VS2012或者更高的版本编译。
+You'll need .NET Framework 4.5.1 or later to use the precompiled binaries. To build client, you'll need Visual Studio 2012 or later versions.
+</br>你需要使用.NET Framework 4.5.1 或者更高的版本。请使用VS2012或者更高的版本编译。
+
+Before v1.2.1,you just need .NET Framework 4.0.
 
 ## Update Note
 v1.1
@@ -28,3 +30,19 @@ v1.2
     add balloon tip;
 
     remove timer;
+    
+v1.2.1
+
+    YOU NEED .NET Framework 4.5.1 or later
+    
+    Add mirrors.nsu.edu.cn;
+    
+    Add CheckUpdate;
+    
+    Add iOS AAA;
+    
+    remove pay.nsu.edu.cn 
+    
+##THANKS
+    Newtonsoft.Json.dll
+
