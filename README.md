@@ -54,5 +54,5 @@ v1.2.2.1
     Fix Bug;
     
 ##Important!
-    Download [Newtonsoft.Json.dll](https://github.com/CmcnPro/NsuToolBox/releases/download/1.2.1/Newtonsoft.Json.dll "Newtonsoft.Json.dll")
+Download [Newtonsoft.Json.dll](https://github.com/CmcnPro/NsuToolBox/releases/download/1.2.1/Newtonsoft.Json.dll "Newtonsoft.Json.dll")
 
