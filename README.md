@@ -43,6 +43,13 @@ v1.2.1
     
     remove pay.nsu.edu.cn 
     
+v1.2.2.0
+
+    Add LiveTV;
+    
+    Add NeusoftLibrary;
+    
+    Code Optimizations;
 ##THANKS
     Newtonsoft.Json.dll
 
