@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Drawing;
 using System.Windows.Forms;
 using System.Net.NetworkInformation;
 using System.Diagnostics;
@@ -13,30 +12,36 @@ namespace NsuToolBox
         {
             InitializeComponent();
             #region 初始化
-
             this.CheckNet("100.0.0.10");//检测网络
-
             Thread th = new Thread(ThreadChild);
             th.Start();
-
             #endregion
-
         }
 
-        static  void ThreadChild()
+        void ThreadChild()
         {
-            var p = new Ping();
-            PingReply reply = p.Send("github.com");
-            if (reply.Status == IPStatus.Success)
+            try
             {
-                string version = "1.2.1";
-                Update up = new Update();
-                up.getJson();
-                up.getLastVersion();
-                if (up.checkUpadte(version))
-                    MessageBox.Show("成都东软校园资源快捷工具有新的更新");
+                var p = new Ping();
+                PingReply reply = p.Send("github.com");
+                if (reply.Status == IPStatus.Success)
+                {
+                    string version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
+                    Update up = new Update();
+                    up.getJson();
+                    up.getLastVersion();
+                    if (up.checkUpadte(version))
+                    {
+                        notifyIcon1.ShowBalloonTip(2000, "成都东软学院校内资源快捷工具", "检查到有新的更新", ToolTipIcon.Info);
+                    }
+                }
+                else
+                    notifyIcon1.ShowBalloonTip(2000, "成都东软学院校内资源快捷工具", "检测到您当前无法正常访问Github，无法更新本程序", ToolTipIcon.Warning);
             }
-            else MessageBox.Show("检测到您当前无法正常访问Github,无法更新本程序");
+            catch (Exception)
+            {
+                notifyIcon1.ShowBalloonTip(2000, "成都东软学院校内资源快捷工具", "检测到您当前无法正常访问Github，无法更新本程序", ToolTipIcon.Warning);
+            }
         }
 
         #region 检测与学院内网是否相通
@@ -50,29 +55,12 @@ namespace NsuToolBox
                 var p = new Ping();
                 PingReply reply = p.Send(IP);
                 if (reply.Status != IPStatus.Success)
-                {
-                    if (string.Equals(IP, "100.0.0.10"))
-                    {
-                        MessageBox.Show("检测到您当前可能未在校内，部分链接可能会无法使用");
-                    }
-                    if (string.Equals(IP,"github.com"))
-                    {
-                        MessageBox.Show("检测到您当前无法访问GIthub,无法更新本程序");
-                    }
-                }
+                    notifyIcon1.ShowBalloonTip(2000, "成都东软学院校内资源快捷工具", "检测到您当前可能未在校内，部分链接可能会无法使用", ToolTipIcon.Warning);
             }
             catch (Exception)
             {
-                if (string.Equals(IP, "100.0.0.10"))
-                {
-                    MessageBox.Show("检测到您当前可能未在校内，部分链接可能会无法使用");
-                }
-                if (string.Equals(IP, "github.com"))
-                {
-                    MessageBox.Show("检测到您当前无法访问GIthub,无法更新本程序");
-                }
+                notifyIcon1.ShowBalloonTip(2000, "成都东软学院校内资源快捷工具", "检测到您当前可能未在校内，部分链接可能会无法使用", ToolTipIcon.Warning);
             }
-
         }
 
         #endregion
@@ -186,8 +174,6 @@ namespace NsuToolBox
 
         }
 
-
-
         private void button1_Click(object sender, EventArgs e)
         {
             Process.Start("http://cc.nsu.edu.cn/download/CERT.zip");
@@ -218,7 +204,7 @@ namespace NsuToolBox
 
         private void iOSAAAButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("请使用iSO设备打开 https://setup.nsu.edu.cn/aaa/ios/ 需进入校园网络");
+            MessageBox.Show("请使用iOS设备打开 https://setup.nsu.edu.cn/aaa/ios/ 需进入校园网络");
         }
 
         private void APSettingButton_Click(object sender, EventArgs e)
@@ -232,8 +218,15 @@ namespace NsuToolBox
             Process.Start("http://mirrors.nsu.edu.cn/");
         }
 
+        private void libButton_Click(object sender, EventArgs e)
+        {
+            Process.Start("http://lib.nsu.edu.cn/");
+        }
 
-
+        private void liveButton_Click(object sender, EventArgs e)
+        {
+            Process.Start("mms://live.nsu.edu.cn/drtv");
+        }
         #endregion
 
     }

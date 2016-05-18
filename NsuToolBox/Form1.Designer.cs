@@ -37,6 +37,8 @@
             this.itbmFtpButton = new System.Windows.Forms.Button();
             this.csFtpButton = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.liveButton = new System.Windows.Forms.Button();
+            this.libButton = new System.Windows.Forms.Button();
             this.mirrorsButton = new System.Windows.Forms.Button();
             this.gradeButton = new System.Windows.Forms.Button();
             this.kbButton = new System.Windows.Forms.Button();
@@ -136,6 +138,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.liveButton);
+            this.groupBox2.Controls.Add(this.libButton);
             this.groupBox2.Controls.Add(this.mirrorsButton);
             this.groupBox2.Controls.Add(this.gradeButton);
             this.groupBox2.Controls.Add(this.kbButton);
@@ -155,6 +159,26 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "校内网站";
+            // 
+            // liveButton
+            // 
+            this.liveButton.Location = new System.Drawing.Point(219, 110);
+            this.liveButton.Name = "liveButton";
+            this.liveButton.Size = new System.Drawing.Size(75, 23);
+            this.liveButton.TabIndex = 14;
+            this.liveButton.Text = "校内直播";
+            this.liveButton.UseVisualStyleBackColor = true;
+            this.liveButton.Click += new System.EventHandler(this.liveButton_Click);
+            // 
+            // libButton
+            // 
+            this.libButton.Location = new System.Drawing.Point(219, 81);
+            this.libButton.Name = "libButton";
+            this.libButton.Size = new System.Drawing.Size(75, 23);
+            this.libButton.TabIndex = 13;
+            this.libButton.Text = "图书馆";
+            this.libButton.UseVisualStyleBackColor = true;
+            this.libButton.Click += new System.EventHandler(this.libButton_Click);
             // 
             // mirrorsButton
             // 
@@ -298,7 +322,7 @@
             this.linkLabel1.Size = new System.Drawing.Size(150, 16);
             this.linkLabel1.TabIndex = 2;
             this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "项目官网/检测更新/问题反馈";
+            this.linkLabel1.Text = "项目官网/获取更新/问题反馈";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // label2
@@ -314,9 +338,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(6, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 17);
+            this.label1.Size = new System.Drawing.Size(88, 17);
             this.label1.TabIndex = 0;
-            this.label1.Text = "当前版本：1.2.1";
+            this.label1.Text = "版本：14.0.0.0";
             // 
             // notifyIcon1
             // 
@@ -468,6 +492,8 @@
         private System.Windows.Forms.Button APSettingButton;
         private System.Windows.Forms.Button mirrorsButton;
         private System.Windows.Forms.Button iOSAAAButton;
+        private System.Windows.Forms.Button libButton;
+        private System.Windows.Forms.Button liveButton;
     }
 }
 
