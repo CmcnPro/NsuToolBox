@@ -11,6 +11,7 @@ namespace NsuToolBox
         public Form1()
         {
             InitializeComponent();
+            label1.Text = "版本:" +Application.ProductVersion.ToString();
             #region 初始化
             this.CheckNet("100.0.0.10");//检测网络
             Thread th = new Thread(ThreadChild);
