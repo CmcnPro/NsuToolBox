@@ -64,6 +64,7 @@
             this.androidAAAButton = new System.Windows.Forms.Button();
             this.getIPButton = new System.Windows.Forms.Button();
             this.CERTButton = new System.Windows.Forms.Button();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -302,6 +303,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.linkLabel2);
             this.groupBox3.Controls.Add(this.linkLabel1);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.label1);
@@ -431,6 +433,16 @@
             this.CERTButton.UseVisualStyleBackColor = true;
             this.CERTButton.Click += new System.EventHandler(this.button1_Click);
             // 
+            // linkLabel2
+            // 
+            this.linkLabel2.AutoSize = true;
+            this.linkLabel2.LinkColor = System.Drawing.Color.Red;
+            this.linkLabel2.Location = new System.Drawing.Point(6, 78);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(0, 17);
+            this.linkLabel2.TabIndex = 3;
+            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -493,6 +505,7 @@
         private System.Windows.Forms.Button iOSAAAButton;
         private System.Windows.Forms.Button libButton;
         private System.Windows.Forms.Button liveButton;
+        private System.Windows.Forms.LinkLabel linkLabel2;
     }
 }
 

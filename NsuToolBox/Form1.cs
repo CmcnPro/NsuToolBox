@@ -19,6 +19,8 @@ namespace NsuToolBox
             #endregion
         }
 
+        delegate void SetTextCallback(string text);
+
         void ThreadChild()
         {
             try
@@ -33,7 +35,8 @@ namespace NsuToolBox
                     up.getLastVersion();
                     if (up.checkUpadte(version))
                     {
-                        notifyIcon1.ShowBalloonTip(2000, "成都东软学院校内资源快捷工具", "检查到有新的更新", ToolTipIcon.Info);
+                        notifyIcon1.ShowBalloonTip(2000, "成都东软学院校内资源快捷工具", "检查到有新的更新,请用Update.exe进行更新。", ToolTipIcon.Info);
+                        this.SetText("有新版本，请更新！");
                     }
                 }
                 else
@@ -42,6 +45,28 @@ namespace NsuToolBox
             catch (Exception)
             {
                 notifyIcon1.ShowBalloonTip(2000, "成都东软学院校内资源快捷工具", "检测到您当前无法正常访问Github，无法更新本程序", ToolTipIcon.Warning);
+            }
+        }
+
+        ///<summary>
+        ///在UI上显示有新的更新
+        /// </summary>
+        private void SetText(string text)
+        {
+            if (this.linkLabel2.InvokeRequired)//如果调用控件的线程和创建创建控件的线程不是同一个则为True
+            {
+                while (!this.linkLabel2.IsHandleCreated)
+                {
+                    //解决窗体关闭时出现“访问已释放句柄“的异常
+                    if (this.linkLabel2.Disposing || this.linkLabel2.IsDisposed)
+                        return;
+                }
+                SetTextCallback d = new SetTextCallback(SetText);
+                this.linkLabel2.Invoke(d, new object[] { text });
+            }
+            else
+            {
+                this.linkLabel2.Text = text;
             }
         }
 
@@ -56,7 +81,9 @@ namespace NsuToolBox
                 var p = new Ping();
                 PingReply reply = p.Send(IP);
                 if (reply.Status != IPStatus.Success)
+                {
                     notifyIcon1.ShowBalloonTip(2000, "成都东软学院校内资源快捷工具", "检测到您当前可能未在校内，部分链接可能会无法使用", ToolTipIcon.Warning);
+                }
             }
             catch (Exception)
             {
@@ -175,6 +202,13 @@ namespace NsuToolBox
 
         }
 
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process p = new Process(); p.StartInfo.FileName = "Update.exe";
+            p.Start();
+            System.Environment.Exit(0);
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             Process.Start("http://cc.nsu.edu.cn/download/CERT.zip");
@@ -228,7 +262,9 @@ namespace NsuToolBox
         {
             Process.Start("mms://live.nsu.edu.cn/drtv");
         }
+
         #endregion
 
+        
     }
 }
