@@ -53,6 +53,11 @@ v1.2.2.1
     
     Fix Bug;
     
+v1.3.0
+
+    Add Update;
+    Now main form display update,and users can update by Update.exe 
+    
 ##Important!
 Download [Newtonsoft.Json.dll](https://github.com/CmcnPro/NsuToolBox/releases/download/1.2.1/Newtonsoft.Json.dll "Newtonsoft.Json.dll")
 
